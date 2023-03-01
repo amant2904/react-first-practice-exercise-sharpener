@@ -1,0 +1,10 @@
+.items{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid grey;
+    padding: 5px;
+    margin: 10px 0px;
+}
+.items h3{
+    margin: 0px;
+}

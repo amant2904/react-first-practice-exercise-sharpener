@@ -1,0 +1,33 @@
+.form-container{
+    width: 30%;
+    box-shadow: 1px 1px 12px 1px grey;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+form{
+    width: 100%;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+form label{
+    font-weight: bold;
+}
+form input{
+    margin: 5px 0px;
+    border-color: grey;
+    padding: 5px;
+    font-size: 20px;
+}
+form button{
+    background-color: rgb(8, 8, 72);
+    color: white;
+    font-size: 22px;
+    padding: 9px;
+    margin: 8px 0px;
+    border-radius: 7px;
+    cursor: pointer;
+}

@@ -1,0 +1,49 @@
+.message-box{
+    width: 46%;
+    height: 46%;
+    background-color: white;
+    position: absolute;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 8px 3px grey;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.heading{
+    height: 30%;
+    background-color: rgb(3, 3, 65);
+    box-sizing: border-box;
+    padding: 15px;
+}
+.heading h1{
+    margin: 10px 0px 10px 20px;
+    color: white;
+}
+.message{
+    height: 40%;
+    padding: 5px;
+}
+.message p{
+    font-size: 34px;
+    margin: 20px 0px 0px 20px;
+}
+.okay_btn{
+    display: flex;
+    height: 30%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.okay_btn button{
+    padding: 8px 22px;
+    margin: 0px 33px 13px 0px;
+    border: none;
+    background-color: #080855;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px 0px grey;
+}
