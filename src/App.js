@@ -3,6 +3,7 @@ import './App.css';
 import UserForm from './components/userInput/UserForm';
 import UserDetails from './components/UserDetails/UserDetails';
 import MessageBox from './components/MessageBox/MessageBox';
+import Wrapper from './components/Helpers/Wrapper';
 
 function App() {
   const [details, setDetails] = useState([]);
@@ -41,11 +42,11 @@ function App() {
     setAlertBox(false);
   }
   return (
-    <div className="all_code">
+    <Wrapper>
       <UserForm liftUpValuesInAppJs={liftUpFormValues} />
       <UserDetails allDetails={details} />
       {alertBox && <MessageBox message={alertMessage} btn_handler={alertBox_btn} />}
-    </div>
+    </Wrapper>
   )
 }
 
