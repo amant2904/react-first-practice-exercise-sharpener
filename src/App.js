@@ -6,11 +6,12 @@ import UserDetails from './components/UserDetails/UserDetails';
 
 function App() {
   const [details, setDetails] = useState([]);
-  const liftUpFormValues = (username, age) => {
+  const liftUpFormValues = (username, age, college) => {
     setDetails((prevDetails) => {
       return [...prevDetails, {
         username: username,
         age: age,
+        college: college,
         id: Math.random().toString()
       }]
     })
