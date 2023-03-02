@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./UserForm.css"
+import MessageBox from "../MessageBox/MessageBox"
 
 export default function UserForm(props) {
 
     const [username, setUsername] = useState("");
     const [age, setAge] = useState("");
+    const [alertBox, setAlertBox] = useState();
 
     const nameInput_handler = (e) => {
         setUsername(e.target.value);
@@ -15,13 +17,28 @@ export default function UserForm(props) {
 
     const submitBtn_handler = (e) => {
         e.preventDefault();
+        if (username.trim().length === 0 || age.trim().length === 0) {
+            setAlertBox({ message: "You Have Entered Invalid Input" });
+            return;
+        }
+        else if (parseInt(age) < 0) {
+            setAlertBox({ message: "Age can not be less than 0" });
+            return;
+        }
         props.liftUpValuesInAppJs(username, age);
+        setAge("");
+        setUsername("");
+    }
+
+    const alertHandler = () => {
+        setAlertBox();
         setAge("");
         setUsername("");
     }
 
     return (
         <div className="form-container">
+            {alertBox && <MessageBox message={alertBox.message} btn_handler={alertHandler} />}
             <form onSubmit={submitBtn_handler}>
                 <div>
                     <label htmlFor="username">Username</label>

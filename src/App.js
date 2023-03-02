@@ -3,24 +3,10 @@ import { useState } from 'react';
 import './App.css';
 import UserForm from './components/userInput/UserForm';
 import UserDetails from './components/UserDetails/UserDetails';
-import MessageBox from './components/MessageBox/MessageBox';
-// import Wrapper from './components/Helpers/Wrapper';
 
 function App() {
   const [details, setDetails] = useState([]);
-  const [alertBox, setAlertBox] = useState();
-  // const [alertMessage, setAlertMessage] = useState("");
   const liftUpFormValues = (username, age) => {
-    if (username.trim().length === 0 || age.trim().length === 0) {
-      // setAlertMessage("You Have Typed Invalid Input");
-      setAlertBox({ message: "You Have Entered Invalid Input" });
-      return;
-    }
-    else if (parseInt(age) < 0) {
-      // setAlertMessage("Age can not be less than 0");
-      setAlertBox({ message: "Age can not be less than 0" });
-      return;
-    }
     setDetails((prevDetails) => {
       return [...prevDetails, {
         username: username,
@@ -29,11 +15,8 @@ function App() {
       }]
     })
   }
-
-  const alertBox_btn = () => {
-    setAlertBox(false);
-  }
   return (
+    // we can make our custom wrapper
     // <Wrapper>
     //   <UserForm liftUpValuesInAppJs={liftUpFormValues} />
     //   <UserDetails allDetails={details} />
@@ -45,7 +28,6 @@ function App() {
     <React.Fragment>
       <UserForm liftUpValuesInAppJs={liftUpFormValues} />
       <UserDetails allDetails={details} />
-      {alertBox && <MessageBox message={alertBox.message} btn_handler={alertBox_btn} />}
     </React.Fragment>
   )
 }
